@@ -65,9 +65,10 @@ const PrivacyPolicy = () => (
           <ul className="mb-6 list-disc pl-6 text-lg">
             <li>Accès prioritaire aux matchs populaires</li>
             <li>Visibilité renforcée de votre profil</li>
-            <li>Création de matchs "privés" ou "filtrés"</li>
+            <li>Création de matchs &quot;privés&quot; ou &quot;filtrés&quot;</li>
             <li>Statistiques personnelles et historiques des rencontres</li>
           </ul>
+
           <p className="mb-6">
             Les détails, tarifs et modalités d’abonnement sont accessibles directement depuis l’application.
           </p>
