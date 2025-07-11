@@ -90,7 +90,7 @@ const PrivacyPolicy = () => (
           <h3 className="text-2xl font-bold mt-10 mb-3 text-green">Clause de non-responsabilité étendue</h3>
           <p className="mb-6">
             En utilisant Match’Up, l’utilisateur reconnaît être pleinement responsable de sa participation aux matchs, de sa sécurité, de son comportement et de ses échanges avec les autres membres.<br />
-            Match’Up décline toute responsabilité en cas de blessure, litige, incident, ou dommage matériel/physique lors d'une rencontre sportive.
+            Match’Up décline toute responsabilité en cas de blessure, litige, incident, ou dommage matériel/physique lors d’une rencontre sportive.
           </p>
           {/* ---------------------------------------- */}
 
