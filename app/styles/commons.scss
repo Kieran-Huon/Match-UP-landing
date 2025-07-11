@@ -1,0 +1,29 @@
+.wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    width: 100%;
+    position: relative;
+
+    &.-right {
+        margin-right: 0;
+    }
+
+    &.-left {
+        margin-left: 0;
+    }
+
+    &.-padded {
+        padding-left: var(--wrapper-padding);
+        padding-right: var(--wrapper-padding);
+    }
+
+    @each $name, $size in $wrappers {
+        &.-#{$name} {
+            max-width: #{$size}rem;
+
+            &.-padded {
+                max-width: calc(#{$size * 10px} + var(--wrapper-padding) * 2);
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@keyframes appearBaseline {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.body-container {
+    .baseline {
+        transition: transform .3s ease-in-out ;
+        animation: appearBaseline 1s forwards 1s;
+        transform: translateX(-50%);
+    }
+}

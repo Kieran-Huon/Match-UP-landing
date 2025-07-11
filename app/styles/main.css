@@ -1,0 +1,374 @@
+:root {
+  --wrapper-padding: 60px;
+  --grid-col-number: 3;
+  --grid-gap: 60px;
+}
+@media (max-width:767px) {
+  :root {
+    --wrapper-padding: 24px;
+  }
+}
+
+@font-face {
+  font-family: "t";
+  src: url("../fonts/TransformaSans_Trial-ExtraBlack.woff2") format("woff2"), url("../fonts/TransformaSans_Trial-ExtraBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "t";
+  src: url("../fonts/TransformaSans_Trial-Regular.woff2") format("woff2"), url("../fonts/TransformaSans_Trial-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "t";
+  src: url("../fonts/TransformaSans_Trial-Medium.woff2") format("woff2"), url("../fonts/TransformaSans_Trial-ExtraBlack.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  position: relative;
+}
+.wrapper.-right {
+  margin-right: 0;
+}
+.wrapper.-left {
+  margin-left: 0;
+}
+.wrapper.-padded {
+  padding-left: var(--wrapper-padding);
+  padding-right: var(--wrapper-padding);
+}
+.wrapper.-small {
+  max-width: 52rem;
+}
+.wrapper.-small.-padded {
+  max-width: calc(520px + var(--wrapper-padding) * 2);
+}
+.wrapper.-medium {
+  max-width: 62.4rem;
+}
+.wrapper.-medium.-padded {
+  max-width: calc(624px + var(--wrapper-padding) * 2);
+}
+.wrapper.-large {
+  max-width: 132rem;
+}
+.wrapper.-large.-padded {
+  max-width: calc(1320px + var(--wrapper-padding) * 2);
+}
+
+.blur-bkg {
+  position: relative;
+  background: '#171717'; /* Gris foncé transparent */
+  backdrop-filter: blur(10px); /* Effet glassmorphisme */
+  -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure subtile */
+  color: white; /* Couleur du texte */
+  overflow: hidden; /* Pour contenir les formes */
+}
+
+/* Pseudo-éléments pour ajouter des formes vertes éclatantes */
+.blur-bkg::before,
+.blur-bkg::after {
+  content: '';
+  position: absolute;
+  background: rgba(0, 204, 102, 0.7); /* Vert fluo avec transparence de 0.7 (#00CC66) */
+  filter: blur(40px); /* Flou sur les formes */
+  border-radius: 50%; /* Formes rondes */
+  z-index: 1; /* Derrière le contenu */
+  animation: glow-blur 15s infinite ease-in-out alternate; /* Animation ajoutée */
+}
+
+/* Personnalisation des formes */
+.blur-bkg::before {
+  width: 200px;
+  height: 200px;
+  top: 100px;
+  left: -50px;
+}
+
+.blur-bkg::after {
+  width: 300px;
+  height: 300px;
+  bottom: 100px;
+  right: -100px;
+}
+
+/* Animation pour la lueur en mouvement */
+@keyframes glow-blur {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(80px, -80px) scale(1.3); /* Translation plus importante */
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-80px, 80px) scale(1);
+    opacity: 1;
+  }
+}
+
+
+.btn {
+  display: block;
+  width: max-content;
+  padding: 10px 34px;
+  color: #FFFFFF;
+  border: solid 1px #00CC66;
+  transition: background-color 0.2s linear, color 0.2s linear;
+  border-radius: 10px;
+}
+.btn.-fill {
+  background-color: #00CC66;
+}
+.btn.-phone {
+  background-color: #00CC66;
+  padding: 10px 20px;
+  width: 100%;
+}
+@media (hover: hover) {
+  .btn:hover {
+    background-color: transparent;
+    color: #00CC66;
+  }
+}
+
+.phone-container {
+  height: 600px;
+  width: 300px;
+  border-radius: 30px;
+  margin: auto;
+  background-color: black;
+  padding: 10px;
+  border: solid 1px #333333;
+  position: relative; /* Ajouté pour permettre aux pseudo-éléments de s’animer autour */
+}
+
+.phone-container:before,
+.phone-container:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 204, 102, 0.7);
+    filter: blur(40px);
+  animation: glow 8s infinite ease-in-out alternate;
+  z-index: -1; /* Derrière le téléphone */
+}
+
+.phone-container:before {
+  top: -20px;
+  left: -10px;
+}
+
+.phone-container:after {
+  bottom: -20px;
+  right: -10px;
+}
+
+@keyframes glow {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(40px, -40px) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-40px, 40px) scale(1);
+    opacity: 1;
+  }
+}
+
+.phone-container > .phone {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15));
+}
+.phone-container > .phone > .navbar {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #0B3C49;
+  border-top: 1px solid #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5; 
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.phone-container > .phone > .navbar > .pin-btn {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 62px;
+  width: 62px;
+  border-radius: 20px;
+  background-color: #00CC66;
+  border: solid 1px #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  outline: none;
+  animation: blink 1.5s infinite;
+}
+.phone-container > .phone > .navbar > .pin-btn > .ico-pin {
+  width: 26px;
+  pointer-events: none;
+}
+.phone-container > .phone > .navbar > .ico-btn {
+  width: 30px;
+  outline: none;
+  animation: blink 1.5s infinite;
+  background-color: #00CC66;
+  border-radius: 10%;
+  padding: 5px;
+}
+.phone-container > .phone > .navbar > .ico-btn > img {
+  pointer-events: none;
+}
+.phone-container > .phone > .screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  transition: transform 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transform: translateY(100%);
+  border-radius: 20px;
+}
+.phone-container > .phone > .screen.-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.phone-container > .phone > .screen.-list > .match {
+  display: flex;
+  gap: 10px;
+  height: 70px;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #333333;
+}
+.phone-container > .phone > .screen.-list > .match > .ball {
+  width: auto;
+  height: calc(100% - 30px);
+  object-fit: cover;
+}
+.phone-container > .phone > .screen.-list > .match > .players {
+  background-color: #333333;
+  height: 40px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  border-radius: 10px;
+}
+.phone-container > .phone > .screen.-list > .match > .gender {
+  height: 30px;
+  width: auto;
+}
+.phone-container > .phone > .screen.-profile {
+  display: flex;
+  flex-direction: column;
+}
+.phone-container > .phone > .screen.-profile > .title {
+  margin-bottom: 20px;
+}
+.phone-container > .phone > .screen.-profile > .profile {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.phone-container > .phone > .screen.-profile > .profile > .picture {
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  border: solid 2px #FFFFFF;
+}
+.phone-container > .phone > .screen.-profile > .profile > .infos {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+}
+.phone-container > .phone > .screen.-profile > .profile > .infos > .gender {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.phone-container > .phone > .screen.-profile > .profile > .infos > .gender > img {
+  width: 20px;
+}
+.phone-container > .phone > .screen.-profile > .btn:not(:last-child) {
+  margin-bottom: 15px;
+}
+.phone-container > .phone > .screen.-shown {
+  transform: translateY(0);
+}
+.phone-container > .phone:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: var(--background-image);
+  background-size: 400%;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 100px;
+  height: 50vh;
+}
+.feature > .col-two {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.feature.-justify-left > .col-one {
+  order: 2;
+}
+.feature.-justify-left > .col-two {
+  order: 1;
+}

@@ -1,0 +1,24 @@
+.feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 100px;
+    height: 50vh;
+
+    > .col-two {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &.-justify-left {
+        > .col-one {
+            order: 2;
+        }
+
+        > .col-two {
+            order: 1
+        }
+    }
+}

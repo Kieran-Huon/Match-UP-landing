@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 't';
+    src: url('../fonts/TransformaSans_Trial-ExtraBlack.woff2') format('woff2'),
+    url('../fonts/TransformaSans_Trial-ExtraBlack.woff') format('woff');
+    font-weight: $extra-bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 't';
+    src: url('../fonts/TransformaSans_Trial-Regular.woff2') format('woff2'),
+    url('../fonts/TransformaSans_Trial-Regular.woff') format('woff');
+    font-weight: $regular;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 't';
+    src: url('../fonts/TransformaSans_Trial-Medium.woff2') format('woff2'),
+    url('../fonts/TransformaSans_Trial-ExtraBlack.woff') format('woff');
+    font-weight: $medium;
+    font-style: normal;
+    font-display: swap;
+}

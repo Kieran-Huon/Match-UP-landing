@@ -1,0 +1,26 @@
+.btn {
+    display: block;
+    width: max-content;
+    padding: 10px 34px;
+    color: $color-blanc;
+    border: solid 1px $color-vert;
+    transition: background-color .2s linear, color .2s linear;
+    border-radius: 10px;
+
+    &.-fill {
+        background-color: $color-vert;
+    }
+
+    &.-phone {
+        background-color: $color-vert;
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: transparent;
+            color: $color-vert;
+        }
+    }
+}

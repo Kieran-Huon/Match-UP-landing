@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --foreground: #171717;
+  /*--background-image: url('./assets/images/map.png');*/
+  --background-image: url('./assets/images/map.jpg');
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #ededed;
+    /*--background-image: url('./assets/images/map.png');*/
+    --background-image: url('./assets/images/map.jpg');
+  }
+}
+
+body {
+  position: relative;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 1;
+  min-height: 100%;
+  background: black;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  //background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  /*filter: blur(2px);*/
+  z-index: -1;
+  pointer-events: none;
+}
+
