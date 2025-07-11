@@ -1,21 +1,20 @@
+// app/team/page.tsx
 'use client';
 
 import Header from '@/app/components/header';
-import './styles/main.css';
+import Footer from '@/app/components/footer';
+import Teams from '@/app/components/teams';
+import '@/app/styles/main.css';
 
-import Footer from './components/footer';
-import ParentComponent from "./components/ParentComponent";
-import Banner from './components/Sports';
-import Matchup from './components/Title';
-import Teams from './components/teams';
 
+
+// Ici tu mets exactement le tabs que tu veux voir dans ton header
 const tabs = [
   { name: 'Équipe', link: '/Teams' },
 ];
 
-// Tableau des membres de l’équipe (utilise le nom ".png" pour chaque image, adapte le chemin si besoin)
 const teamsData = [
-  { name: 'Raphael', role: 'Chef de projet', image: '/images/Raphael.png' },
+  { name: 'Raphaël', role: 'Chef de projet', image: '/images/Raphael.png' },
   { name: 'William', role: 'Chef de projet', image: '/images/William.png' },
   { name: 'Kevin', role: 'Développeur front', image: '/images/Kevin.png' },
   { name: 'Ayoub', role: 'Développeur front', image: '/images/Ayoub.png' },
@@ -25,18 +24,15 @@ const teamsData = [
   { name: 'Axel', role: 'Développeur backend', image: '/images/Axel.png' },
 ];
 
-export default function Home() {
+export default function TeamPage() {
   return (
-    <div className="blur-bkg">
-      <div className="wrapper -large -padded">
+    <div className="blur-bkg min-h-screen">
+      <div className="wrapper -large -padded flex flex-col min-h-screen">
+        {/* On importe ton header EXACT avec tabs */}
         <Header tabs={tabs} />
-        {/* <Matchup /> */}
-        {/* <Banner /> */}
-        <ParentComponent />
-
-        {/* Section Équipe */}
-        {/* <Teams teams={teamsData} /> */}
-
+        <main className="flex-1 flex flex-col items-center justify-center py-12">
+          <Teams teams={teamsData} />
+        </main>
         <Footer />
       </div>
     </div>

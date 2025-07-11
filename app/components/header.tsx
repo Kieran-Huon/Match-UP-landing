@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Image from "next/image";
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/MU-logo.png';
 
 type Tab = {
     name: string;

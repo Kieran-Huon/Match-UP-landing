@@ -9,8 +9,8 @@ const ParentComponent: React.FC = () => {
         description: 'Assemble ta team, découvre ton sport, explose tes limites !',
         image: '/path-to-default-image.png', // Image par défaut
         features: [
-            { name: 'Feature 1', description: 'Description de la feature 1' },
-            { name: 'Feature 2', description: 'Description de la feature 2' },
+            // { name: 'Feature 1', description: 'Description de la feature 1' },
+            // { name: 'Feature 2', description: 'Description de la feature 2' },
         ],
     };
 
@@ -32,7 +32,7 @@ const ParentComponent: React.FC = () => {
             description: 'Découvre les matchs près de chez toi et rejoins l\'action en un instant !',
             image: '/path-to-list-image.png',
             features: [
-                { name: 'Football', description: 'Matchs de football disponibles' },
+                // { name: 'Football', description: 'Matchs de football disponibles' },
             ],
         });
     };
@@ -43,7 +43,7 @@ const ParentComponent: React.FC = () => {
             description: 'Ton profil, ton terrain de jeu : affiche tes compétences et trouve tes meilleurs partenaires !',
             image: '/path-to-profile-image.png',
             features: [
-                { name: 'Utilisateur', description: 'Nom : Alexis' },
+                // { name: 'Utilisateur', description: 'Nom : Alexis' },
             ],
         });
     };
@@ -54,7 +54,7 @@ const ParentComponent: React.FC = () => {
             description: 'Prêt à relever le défi ? Crée ton match en un clic et joue dès maintenant !',
             image: '/path-to-profile-image.png',
             features: [
-                { name: 'Utilisateur', description: 'Nom : Alexis' },
+                // { name: 'Utilisateur', description: 'Nom : Alexis' },
             ],
         });
     };

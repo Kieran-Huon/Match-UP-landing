@@ -2,9 +2,11 @@
 
 import Header from '@/app/components/header';
 import Footer from '@/app/components/footer';
+import '@/app/styles/main.css';
+
 
 const tabs = [
-  { name: 'Équipe', link: '#teams' },
+  { name: 'Équipe', link: '/Teams' },
 ];
 
 const PrivacyPolicy = () => (
